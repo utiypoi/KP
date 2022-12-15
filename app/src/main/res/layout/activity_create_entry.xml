@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".CreateEntryActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewHealthTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="150dp"
+            android:text="@string/text_your_mood"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextDateTime"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:inputType="date"
+            android:maxWidth="60dp"
+            android:minWidth="20dp"
+            android:minHeight="48dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHealthTitle"/>
+
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDateTime">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/imageButtonSuper"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:contentDescription="@string/button_super_description"
+                    android:scaleType="fitCenter"
+                    android:onClick="openSuperButton"
+                    app:srcCompat="@drawable/smiling_super" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonGood"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:contentDescription="@string/button_good_description"
+                    android:scaleType="fitCenter"
+                    android:onClick="openGoodButton"
+                    app:srcCompat="@drawable/smiling_good" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonNeutral"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:contentDescription="@string/button_neutral_description"
+                    android:scaleType="fitCenter"
+                    android:onClick="openNeutralButton"
+                    app:srcCompat="@drawable/smiling_neutral" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonBad"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:contentDescription="@string/button_bad_description"
+                    android:scaleType="fitCenter"
+                    android:onClick="openBadButton"
+                    app:srcCompat="@drawable/smiling_bad" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonTerrible"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    android:background="@null"
+                    android:contentDescription="@string/button_terrible_description"
+                    android:scaleType="fitCenter"
+                    android:onClick="openTerribleButton"
+                    app:srcCompat="@drawable/smiling_terrible" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewSuper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/name_smiling_super"
+                    android:textColor="@color/text_super"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textViewGood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/name_smiling_good"
+                    android:textColor="@color/text_good"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textViewNeutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/name_smiling_neutral"
+                    android:textColor="@color/text_neutral"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textViewBad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/name_smiling_bad"
+                    android:textColor="@color/text_bad"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/textViewTerrible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/name_smiling_terrible"
+                    android:textColor="@color/text_terrible"
+                    android:visibility="invisible" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/buttonForth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="100dp"
+            android:background="@drawable/button_background"
+            android:text="@string/text_resume"
+            android:onClick="openContinuationEntry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

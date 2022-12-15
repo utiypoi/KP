@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Moods</string>
+    <string name="text_add">добавить</string>
+    <string name="text_health_title">Как ваше настроение?</string>
+    <string name="name_smiling_super">отлично</string>
+    <string name="name_smiling_good">хорошо</string>
+    <string name="name_smiling_neutral">не очень</string>
+    <string name="name_smiling_bad">плохо</string>
+    <string name="name_smiling_terrible">ужасно</string>
+    <string name="button_super_description">Кнопка супер</string>
+    <string name="button_good_description">Кнопка хорошо</string>
+    <string name="button_neutral_description">Кнопка не очень</string>
+    <string name="button_bad_description">Кнопка плохо</string>
+    <string name="button_terrible_description">Кнопка ужасно</string>
+    <string name="text_resume">продолжить</string>
+    <string name="text_save">сохранить</string>
+    <string name="text_add_comment">Добавьте комментарий</string>
+    <string name="text_comment">Комментарий</string>
+    <string name="toast_mood_selection_warning">Выберите соответствующее настроение</string>
+    <string name="text_your_mood">Ваше настроение</string>
+</resources>
