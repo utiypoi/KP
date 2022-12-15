@@ -98,4 +98,10 @@ public class MoodAdapter extends RecyclerView.Adapter<MoodAdapter.MoodsViewHolde
             });
         }
     }
+
+    public void filterList(ArrayList<Mood> filteredList){
+        moods = filteredList;
+        notifyDataSetChanged();
+    }
+
 }

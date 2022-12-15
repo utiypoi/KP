@@ -18,4 +18,5 @@
     <string name="text_comment">Комментарий</string>
     <string name="toast_mood_selection_warning">Выберите соответствующее настроение</string>
     <string name="text_your_mood">Ваше настроение</string>
+    <string name="search">поиск</string>
 </resources>
