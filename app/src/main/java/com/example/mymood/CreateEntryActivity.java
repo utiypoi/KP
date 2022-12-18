@@ -33,7 +33,6 @@ public class CreateEntryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_entry);
-        buttonCircle = findViewById(R.id.buttonForth);
         dateTimePicker = findViewById(R.id.editTextDateTime);
         setInitialDateTime();
         dateTimePicker.setInputType(InputType.TYPE_CLASS_DATETIME);

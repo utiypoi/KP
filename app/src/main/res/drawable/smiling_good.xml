@@ -1,18 +1,10 @@
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="600dp"
-    android:height="600dp"
-    android:viewportWidth="600"
-    android:viewportHeight="600">
-  <path
-      android:pathData="M0,0L0,600 600,600 600,0 0,0Z"
-     android:fillColor="#abcd6f"/>
-  <path
-      android:pathData="M214,195.443C182.531,200.024 174.848,243.662 186.757,268 193.22,281.209 204.156,292.153 220,290.206 251.972,286.277 258.723,242.192 247.36,218 241.374,205.256 229.324,193.212 214,195.443Z"
-      android:fillColor="#010101"/>
-  <path
-      android:pathData="M382,195.443C350.531,200.024 342.848,243.662 354.757,268 361.22,281.209 372.156,292.153 388,290.206 419.972,286.277 426.723,242.192 415.36,218 409.374,205.256 397.324,193.212 382,195.443Z"
-      android:fillColor="#010101"/>
-  <path
-      android:pathData="M206,386L206,387C242.454,421.889 296.965,435.061 345,418.305 364.565,411.48 380.276,400.169 396,387 392.93,382.642 383.141,369.079 377,371.89 369.901,375.139 363.955,382.568 357,386.572 337.053,398.053 315.036,403.497 292,401.91 275.197,400.753 258.385,394.509 244,385.985 238.627,382.802 228.965,371.423 223,371.346 217.335,371.272 209.744,382.256 206,386Z"
-      android:fillColor="#010101"/>
+<vector android:height="80.987656dp" android:viewportHeight="164"
+    android:viewportWidth="162" android:width="80dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#A0E35D" android:pathData="M0,81.6a80.58,81.6 0,1 0,161.16 0a80.58,81.6 0,1 0,-161.16 0z"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M117.6,110.47L102.19,115.95C88.67,120.76 73.89,120.66 60.43,115.68L45.08,110"
+        android:strokeColor="#77BF3E" android:strokeLineCap="round"
+        android:strokeLineJoin="round" android:strokeWidth="10.2"/>
+    <path android:fillColor="#77BF3E" android:pathData="M55.08,63.24m-12.24,0a12.24,12.24 0,1 1,24.48 0a12.24,12.24 0,1 1,-24.48 0"/>
+    <path android:fillColor="#77BF3E" android:pathData="M104.04,63.24m-12.24,0a12.24,12.24 0,1 1,24.48 0a12.24,12.24 0,1 1,-24.48 0"/>
 </vector>

@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ public class MoodAdapter extends RecyclerView.Adapter<MoodAdapter.MoodsViewHolde
                 colorId = moodsViewHolder.itemView.getResources().getColor(R.color.text_terrible);
                 break;
         }
-        moodsViewHolder.textViewNameMood.setBackgroundColor(colorId);
+        moodsViewHolder.constraintCardView.setBackgroundColor(colorId);
     }
 
     @Override
@@ -71,11 +72,12 @@ public class MoodAdapter extends RecyclerView.Adapter<MoodAdapter.MoodsViewHolde
         private TextView textViewNameMood;
         private TextView textViewComment;
         private TextView textViewDateTimeEntry;
+        private ConstraintLayout constraintCardView;
 
         public MoodsViewHolder(@NonNull View itemView){
             super(itemView);
+            constraintCardView = itemView.findViewById(R.id.constraintCardView);
             textViewNameMood = itemView.findViewById(R.id.textViewNameMood);
-            //textViewPriority = itemView.findViewById(R.id.textViewPriority);
             textViewComment = itemView.findViewById(R.id.textViewComment);
             textViewDateTimeEntry = itemView.findViewById(R.id.textViewDateTime);
 

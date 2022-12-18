@@ -2,11 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="text_super">#57bf83</color>
-    <color name="text_good">#abcd6f</color>
-    <color name="text_neutral">#ffc93d</color>
-    <color name="text_bad">#ff9901</color>
-    <color name="text_terrible">#ff0101</color>
+    <color name="text_super">#67D593</color>
+    <color name="text_good">#A0E35D</color>
+    <color name="text_neutral">#E3DE5D</color>
+    <color name="text_bad">#E38D5D</color>
+    <color name="text_terrible">#5D83E3</color>
     <color name="activity_background">#F5F7FA</color>
     <color name="button_background">#7A57D1</color>
 </resources>

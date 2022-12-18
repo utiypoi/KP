@@ -11,7 +11,8 @@
         android:theme="@style/Theme.MyMood">
         <activity
             android:name=".CardViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:hardwareAccelerated="true"/>
         <activity
             android:name=".ContinuationCreateEntryActivity"
             android:exported="false" />
