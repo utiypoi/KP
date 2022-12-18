@@ -3,8 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="text_super">#67D593</color>
-    <color name="text_good">#A0E35D</color>
-    <color name="text_neutral">#E3DE5D</color>
+    <color name="text_good">#82B64D</color>
+    <color name="text_neutral">#BFBB49</color>
     <color name="text_bad">#E38D5D</color>
     <color name="text_terrible">#5D83E3</color>
     <color name="activity_background">#F5F7FA</color>

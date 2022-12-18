@@ -6,6 +6,7 @@ public class Mood {
     private String comment;
     private String dateTimeEntry;
     private int priority;
+
     public Mood(int id, String nameMood, String comment, String dateTimeEntry, int priority){
         this.id = id;
         this.nameMood = nameMood;

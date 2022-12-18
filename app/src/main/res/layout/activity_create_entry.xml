@@ -8,18 +8,22 @@
     android:background="#E8EAF6"
     tools:context=".CreateEntryActivity">
 
+
         <TextView
             android:id="@+id/textViewHealthTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="150dp"
             android:text="@string/text_your_mood"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="80dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/editTextDateTime" />
+
 
         <EditText
             android:id="@+id/editTextDateTime"
@@ -31,21 +35,19 @@
             android:focusableInTouchMode="false"
             android:gravity="center"
             android:inputType="date"
-            android:maxWidth="60dp"
-            android:minWidth="20dp"
-            android:minHeight="48dp"
             android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/textViewHealthTitle"
             app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewHealthTitle"/>
-
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="50dp"
+            android:padding="10dp"
+            android:background="@drawable/design_table_moods"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextDateTime">
@@ -63,8 +65,8 @@
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:contentDescription="@string/button_super_description"
-                    android:scaleType="fitCenter"
                     android:onClick="openSuperButton"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/smiling_super" />
 
                 <ImageButton
@@ -75,8 +77,8 @@
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:contentDescription="@string/button_good_description"
-                    android:scaleType="fitCenter"
                     android:onClick="openGoodButton"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/smiling_good" />
 
                 <ImageButton
@@ -87,8 +89,8 @@
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:contentDescription="@string/button_neutral_description"
-                    android:scaleType="fitCenter"
                     android:onClick="openNeutralButton"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/smiling_neutral" />
 
                 <ImageButton
@@ -99,8 +101,8 @@
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:contentDescription="@string/button_bad_description"
-                    android:scaleType="fitCenter"
                     android:onClick="openBadButton"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/smiling_bad" />
 
                 <ImageButton
@@ -111,8 +113,8 @@
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:contentDescription="@string/button_terrible_description"
-                    android:scaleType="fitCenter"
                     android:onClick="openTerribleButton"
+                    android:scaleType="fitCenter"
                     app:srcCompat="@drawable/smiling_terrible" />
             </TableRow>
 
@@ -167,14 +169,39 @@
             </TableRow>
         </TableLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buttonForthEntry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_margin="20dp"
-            android:src="@drawable/next"
-            android:background="@drawable/design_navigation_panel"
-            android:onClick="openContinuationEntry" />
+    <TextView
+        android:id="@+id/textViewComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:text="@string/text_comment"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout" />
+
+    <EditText
+        android:id="@+id/editTextComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:maxLines="15"
+        android:hint="@string/text_add_comment"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewComment" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/saveEntryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/design_navigation_panel"
+        android:onClick="saveEntry"
+        android:src="@drawable/check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

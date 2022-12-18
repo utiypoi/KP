@@ -10,12 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMood">
         <activity
+            android:name=".Statistic"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".CardViewActivity"
             android:exported="false"
-            android:hardwareAccelerated="true"/>
-        <activity
-            android:name=".ContinuationCreateEntryActivity"
-            android:exported="false" />
+            android:hardwareAccelerated="true" />
         <activity
             android:name=".CreateEntryActivity"
             android:exported="false" />
