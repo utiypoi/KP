@@ -8,6 +8,17 @@
     android:background="#E8EAF6"
     tools:context=".CreateEntryActivity">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:background="@android:color/transparent"
+        android:layout_margin="20dp"
+        android:onClick="openEntries"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
         <TextView
             android:id="@+id/textViewHealthTitle"

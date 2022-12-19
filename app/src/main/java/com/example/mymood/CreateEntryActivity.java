@@ -135,6 +135,9 @@ public class CreateEntryActivity extends AppCompatActivity {
     }
 
     public void saveEntry(View view) {
+        if(priority==0){
+            Toast.makeText(this,"Выберите соответствующее настроение", Toast.LENGTH_SHORT).show();
+        }else {
             String textComment = editTextComment.getText().toString().trim();
             String textDateTimeEntry = dateTimePicker.getText().toString();
             ContentValues contentValues = new ContentValues();
@@ -144,7 +147,13 @@ public class CreateEntryActivity extends AppCompatActivity {
             contentValues.put(MoodContact.MoodEntry.COLUMN_PRIORITY, priority);
             database.insert(MoodContact.MoodEntry.TABLE_NAME, null, contentValues);
             Intent intent = new Intent(this, MainActivity.class);
-        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
+        }
+
+    public void openEntries(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+    }
 }

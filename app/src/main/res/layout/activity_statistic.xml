@@ -36,8 +36,8 @@
             app:layout_constraintTop_toBottomOf="@id/allEntries" />
     </LinearLayout>
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChartStatistic"
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChartStatistic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

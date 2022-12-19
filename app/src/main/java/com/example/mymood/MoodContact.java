@@ -1,5 +1,7 @@
 package com.example.mymood;
 
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
 public class MoodContact {
@@ -19,5 +21,6 @@ public class MoodContact {
                 ", " + COLUMN_DATE_TIME_ENTRY + " " + TYPE_TEXT + ", " + COLUMN_PRIORITY +
                 " " + TYPE_INTEGER + ")";
         public static final String DROP_COMMAND = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
     }
 }
