@@ -9,27 +9,47 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.PieChart;
+
 public class Statistic extends AppCompatActivity {
 
-    private MoodDBHelper dbHelper;
-    private SQLiteDatabase database;
+    TextView quantityEntry;
+    PieChart pieChartStatistic;
+    String[] moodsName = {"Отлично", "Хорошо", "Не очень", "Плохо", "Ужасно"};
+    int[] valuesMoods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic);
+        Init();
         MoodDBHelper dbHelper = new MoodDBHelper(this);
         SQLiteDatabase database = dbHelper.getWritableDatabase();
-        TextView quantityEntry = findViewById(R.id.quantityEntry);
         //количество записей всего
         int n = (int) DatabaseUtils.queryNumEntries(database,"moods");
-        //long n = DatabaseUtils.queryNumEntries(database,"moods",null);
         quantityEntry.setText(String.valueOf(n));
+
+        setupChartView();
+    }
+
+    private void setupChartView() {
+
+    }
+
+    private void Init() {
+        pieChartStatistic = findViewById(R.id.pieChartStatistic);
+        quantityEntry = findViewById(R.id.quantityEntry);
     }
 
     public void openEntries(View view) {
         Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+    }
+
+    public void openCreateEntry(View view) {
+        Intent intent = new Intent(this,CreateEntryActivity.class);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
     }
 }

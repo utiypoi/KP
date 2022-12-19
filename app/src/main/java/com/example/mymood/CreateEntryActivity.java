@@ -144,7 +144,7 @@ public class CreateEntryActivity extends AppCompatActivity {
             contentValues.put(MoodContact.MoodEntry.COLUMN_PRIORITY, priority);
             database.insert(MoodContact.MoodEntry.TABLE_NAME, null, contentValues);
             Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
 }

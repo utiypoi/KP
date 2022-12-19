@@ -30,12 +30,12 @@
 
         <TextView
             android:id="@+id/textViewComment"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:textColor="#FFFFFF"
-            android:singleLine="true"
-            android:lines="3"
+            android:maxLines="1"
+            android:ellipsize="end"
             app:layout_constraintTop_toBottomOf="@+id/textViewNameMood"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/textViewDateTime"
