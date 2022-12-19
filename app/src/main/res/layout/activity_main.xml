@@ -81,6 +81,7 @@
                 android:adjustViewBounds="true"
                 android:background="@android:color/transparent"
                 android:scaleType="fitCenter"
+                android:onClick="openStatistic"
                 android:src="@drawable/statistic" />
         </TableRow>
 

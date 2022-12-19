@@ -144,39 +144,7 @@ public class CreateEntryActivity extends AppCompatActivity {
             contentValues.put(MoodContact.MoodEntry.COLUMN_PRIORITY, priority);
             database.insert(MoodContact.MoodEntry.TABLE_NAME, null, contentValues);
             Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
-
-//    public void openContinuationEntry(View view) {
-//        if (textViewVisibility == 0) {
-//            Toast.makeText(this, R.string.toast_mood_selection_warning, Toast.LENGTH_SHORT).show();
-//        } else {
-//            switch (textViewVisibility) {
-//                case 1:
-//                    textViewVisibilityString = getString(R.string.name_smiling_super);
-//                    break;
-//                case 2:
-//                    textViewVisibilityString = getString(R.string.name_smiling_good);
-//                    break;
-//                case 3:
-//                    textViewVisibilityString = getString(R.string.name_smiling_neutral);
-//                    break;
-//                case 4:
-//                    textViewVisibilityString = getString(R.string.name_smiling_bad);
-//                    break;
-//                case 5:
-//                    textViewVisibilityString = getString(R.string.name_smiling_terrible);
-//                    break;
-//            }
-//            String dateTimeEntry = dateTimePicker.getText().toString();
-//            Intent intent = new Intent(this, ContinuationCreateEntryActivity.class);
-//            //название настроения - continuation activity
-//            intent.putExtra("NameMood", textViewVisibilityString);
-//            //строковое значение даты и времени
-//            intent.putExtra("dateTimeEntry", dateTimeEntry);
-//            //видимое настроение - continuation activity
-//            intent.putExtra("IdMood", textViewVisibility);
-//            startActivity(intent);
-//        }
-//    }
 }
