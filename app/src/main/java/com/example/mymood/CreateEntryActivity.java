@@ -96,48 +96,48 @@ public class CreateEntryActivity extends AppCompatActivity {
         textViewBad.setVisibility(View.INVISIBLE);
         textViewTerrible.setVisibility(View.INVISIBLE);
         textViewVisibilityString = "";
-        priority=0;
+        priority = 0;
     }
 
     public void openSuperButton(View view) {
         stealthVisibility(view);
         textViewSuper.setVisibility(View.VISIBLE);
         textViewVisibilityString = "Отлично";
-        priority=1;
+        priority = 1;
     }
 
     public void openGoodButton(View view) {
         stealthVisibility(view);
         textViewGood.setVisibility(View.VISIBLE);
         textViewVisibilityString = "Хорошо";
-        priority=2;
+        priority = 2;
     }
 
     public void openNeutralButton(View view) {
         stealthVisibility(view);
         textViewNeutral.setVisibility(View.VISIBLE);
         textViewVisibilityString = "Не очень";
-        priority=3;
+        priority = 3;
     }
 
     public void openBadButton(View view) {
         stealthVisibility(view);
         textViewBad.setVisibility(View.VISIBLE);
         textViewVisibilityString = "Плохо";
-        priority=4;
+        priority = 4;
     }
 
     public void openTerribleButton(View view) {
         stealthVisibility(view);
         textViewTerrible.setVisibility(View.VISIBLE);
         textViewVisibilityString = "Ужасно";
-        priority=5;
+        priority = 5;
     }
 
     public void saveEntry(View view) {
-        if(priority==0){
-            Toast.makeText(this,"Выберите соответствующее настроение", Toast.LENGTH_SHORT).show();
-        }else {
+        if (priority == 0) {
+            Toast.makeText(this, "Выберите соответствующее настроение", Toast.LENGTH_SHORT).show();
+        } else {
             String textComment = editTextComment.getText().toString().trim();
             String textDateTimeEntry = dateTimePicker.getText().toString();
             ContentValues contentValues = new ContentValues();
@@ -149,7 +149,7 @@ public class CreateEntryActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
-        }
+    }
 
     public void openEntries(View view) {
         Intent intent = new Intent(this, MainActivity.class);

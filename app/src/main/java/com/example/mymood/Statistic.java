@@ -3,8 +3,10 @@ package com.example.mymood;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -18,47 +20,100 @@ import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.util.ArrayList;
 
 public class Statistic extends AppCompatActivity {
 
-    TextView quantityEntry;
-    private LineChart chart;
+    TextView quantityEntry, textMoodSuper, textMoodGood, textMoodNeutral, textMoodBad, textMoodTerrible;
+    private PieChart chart;
+    int e,s,g,n,b,t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistic);
         Init();
+        queryDatabaseInfo();
+        PieDataSet pieDataSet = new PieDataSet(dataPie(),"");
+        pieDataSet.setColors(getResources().getColor(R.color.text_super),
+                getResources().getColor(R.color.text_good),
+                getResources().getColor(R.color.text_neutral),
+                getResources().getColor(R.color.text_bad),
+                getResources().getColor(R.color.text_terrible));
+        chart.setUsePercentValues(true);
+        chart.setRotationEnabled(false);
+        chart.setDrawCenterText(true);
+        chart.setDrawHoleEnabled(true);
+        chart.setRotationAngle(0);
+        chart.setDrawSliceText(false);
+        chart.setTouchEnabled(false);
+        chart.setUsePercentValues(true);
+        PieData pieData = new PieData(pieDataSet);
+        chart.setData(pieData);
+        pieData.setValueFormatter(new PercentFormatter());
+        pieData.setValueTextColor(Color.WHITE);
+        pieData.setValueTextSize(11f);
+        chart.invalidate();
+    }
+
+    private ArrayList<PieEntry> dataPie(){
+        ArrayList<PieEntry> dataPie = new ArrayList<>();
+        dataPie.add(new PieEntry(s,"Отлично"));
+        dataPie.add(new PieEntry(g,"Хорошо"));
+        dataPie.add(new PieEntry(n,"Не очень"));
+        dataPie.add(new PieEntry(b,"Плохо"));
+        dataPie.add(new PieEntry(t,"Ужасно"));
+        return dataPie;
+    }
+
+    private void queryDatabaseInfo(){
         MoodDBHelper dbHelper = new MoodDBHelper(this);
         SQLiteDatabase database = dbHelper.getWritableDatabase();
-        //количество записей всего
-        int n = (int) DatabaseUtils.queryNumEntries(database,"moods");
-        quantityEntry.setText(String.valueOf(n));
-        ArrayList<Entry> entries = new ArrayList<>();
-        entries.add(new Entry(1f, 5f));
-        entries.add(new Entry(2f, 2f));
-        entries.add(new Entry(3f, 1f));
-        entries.add(new Entry(4f, -3f));
-        entries.add(new Entry(5f, 4f));
-        entries.add(new Entry(6f, 1f));
+        e = (int) DatabaseUtils.queryNumEntries(database,"moods");
+        quantityEntry.setText(String.valueOf(e));
 
-// На основании массива точек создадим первую линию с названием
-        LineDataSet dataset = new LineDataSet(entries, "График первый");
+        String sQuery = "select * from " + MoodContact.MoodEntry.TABLE_NAME + " where " + MoodContact.MoodEntry.COLUMN_PRIORITY + " =1";
+        Cursor sCursor = database.rawQuery(sQuery,null);
+        s = sCursor.getCount();
+        textMoodSuper.setText(String.valueOf(s));
+        sCursor.close();
 
-// Создадим переменную данных для графика
-        LineData data = new LineData(dataset);
-// Передадим данные для графика в сам график
-        chart.setData(data);
+        String gQuery = "select * from " + MoodContact.MoodEntry.TABLE_NAME + " where " + MoodContact.MoodEntry.COLUMN_PRIORITY + " =2";
+        Cursor gCursor = database.rawQuery(gQuery,null);
+        g = gCursor.getCount();
+        textMoodGood.setText(String.valueOf(g));
+        gCursor.close();
 
-// Не забудем отправить команду на перерисовку кадра, иначе график не отобразится
-        chart.invalidate();
+        String nQuery = "select * from " + MoodContact.MoodEntry.TABLE_NAME + " where " + MoodContact.MoodEntry.COLUMN_PRIORITY + " =3";
+        Cursor nCursor = database.rawQuery(nQuery,null);
+        n = nCursor.getCount();
+        textMoodNeutral.setText(String.valueOf(n));
+        gCursor.close();
+
+        String bQuery = "select * from " + MoodContact.MoodEntry.TABLE_NAME + " where " + MoodContact.MoodEntry.COLUMN_PRIORITY + " =4";
+        Cursor bCursor = database.rawQuery(bQuery,null);
+        b = bCursor.getCount();
+        textMoodBad.setText(String.valueOf(b));
+        gCursor.close();
+
+        String tQuery = "select * from " + MoodContact.MoodEntry.TABLE_NAME + " where " + MoodContact.MoodEntry.COLUMN_PRIORITY + " =5";
+        Cursor tCursor = database.rawQuery(tQuery,null);
+        t = tCursor.getCount();
+        textMoodTerrible.setText(String.valueOf(t));
+        tCursor.close();
+
     }
 
     private void Init() {
         quantityEntry = findViewById(R.id.quantityEntry);
-        chart = findViewById(R.id.lineChartStatistic);
+        textMoodSuper = findViewById(R.id.textMoodSuper);
+        textMoodGood = findViewById(R.id.textMoodGood);
+        textMoodNeutral = findViewById(R.id.textMoodNeutral);
+        textMoodBad = findViewById(R.id.textMoodBad);
+        textMoodTerrible = findViewById(R.id.textMoodTerrible);
+        chart = findViewById(R.id.pieChart);
     }
 
     public void openEntries(View view) {
