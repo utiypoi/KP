@@ -7,6 +7,19 @@
     android:background="@color/backgroung_layout"
     tools:context=".Statistic">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topProfileView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/design_navigation_panel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/stringsEntries">
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <LinearLayout
         android:id="@+id/stringsEntries"
         android:layout_width="wrap_content"
@@ -44,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="100dp"
         android:background="@drawable/table_statistic"
         android:gravity="center"
@@ -130,9 +143,10 @@
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/pieChart"
-        android:layout_width="300dp"
-        android:layout_height="290dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toTopOf="@id/navigationTableLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/statisticView" />

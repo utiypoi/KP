@@ -22,4 +22,9 @@
     <string name="add">добавить</string>
     <string name="statistic">статистика</string>
     <string name="all_entries">Всего записей:</string>
+    <string name="title_app">MyMood</string>
+    <string name="already_have_account_signup">Нет учетной записи?<b> Создайте ее!</b></string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

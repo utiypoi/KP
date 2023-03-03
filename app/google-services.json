@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765206875384",
+    "project_id": "mymood-ff192",
+    "storage_bucket": "mymood-ff192.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765206875384:android:d4340a3c9b8c7503573f0d",
+        "android_client_info": {
+          "package_name": "com.example.mymood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765206875384-5lsf3d26c89gpitmhna1od3944otvl1j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtDbk_4GQ9sJeUF229mbWAnwLEgos_0ag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765206875384-5lsf3d26c89gpitmhna1od3944otvl1j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
